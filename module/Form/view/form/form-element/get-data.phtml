@@ -1,0 +1,32 @@
+<?php
+    $form=$this->form;
+    $fullname = $form->get('fullname');// get attribute full name of form
+    $hidden = $form->get('hidden_input');
+    $age = $form->get('age');
+    $email = $form->get('my_email');
+    $password = $form->get('my_password');
+    $file = $form->get('my_file');
+    $btnReset=$form->get('btnReset');
+    $btnSubmit=$form->get('btnSubmit');
+    $captcha=$form->get('captchaImage');
+
+?>
+
+<div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-md-offset-3">
+        <?=$this->form()->openTag($form);?><!--open form-->
+        <?php
+            echo $this->formLabel($fullname);
+            echo $this->formElement($fullname);
+        ?> <!-- get form row of name(including lable, etc...)-->
+        <?=$this->formRow($hidden)?>
+        <?=$this->formRow($age)?>
+        <?=$this->formRow($email)?>
+        <?=$this->formRow($password)?>
+        <?=$this->formRow($file)?>
+        <?=$this->formRow($captcha)?>
+        <?=$this->formRow($btnReset)?>
+        <?=$this->formRow($btnSubmit)?>
+        <?=$this->form()->closeTag($form)?> <!--close form-->
+    </div>
+</div>

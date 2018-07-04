@@ -1,0 +1,47 @@
+<?php
+    $form=$this->form;
+    $form->setAttribute('method', 'post');//set method for form
+    $fullname = $form->get('fullname');// get attribute full name of form
+    $hidden = $form->get('hidden_input');
+    $age = $form->get('age');
+    $email = $form->get('my_email');
+    $password = $form->get('my_password');
+    $gender = $form->get('gender');
+    $select = $form->get('my_select');
+    $message = $form->get('message');
+    $file = $form->get('my_file');
+    $checkbox = $form->get('my_checkbox');
+    $multiCheckbox = $form->get('my_multiCheckbox');
+    $color = $form->get('my_color');
+    $date = $form->get('date');
+    $range = $form->get('my_range');
+    $btnReset=$form->get('btnReset');
+    $btnSubmit=$form->get('btnSubmit');
+    $captcha=$form->get('captchaImage');
+
+?>
+
+<div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-md-offset-3">
+        <?=$this->form()->openTag($form);?><!--open form-->
+        <?=$this->formRow($fullname)?> <!-- get form row of name(including lable, etc...)-->
+        <?=$this->formRow($hidden)?>
+        <?=$this->formRow($age)?>
+        <?=$this->formRow($email)?>
+        <?=$this->formRow($password)?>
+        <?=$this->formRow($gender)?>
+        <?=$this->formRow($select)?>
+        <?=$this->formRow($message)?>
+        <?=$this->formRow($file)?>
+        <?=$this->formRow($checkbox)?>
+        <?=$this->formRow($multiCheckbox)?>
+        <?=$this->formRow($color)?>
+        <br>
+        <?=$this->formRow($date)?>
+        <?=$this->formRow($range)?>
+        <?=$this->formRow($captcha)?>
+        <?=$this->formRow($btnReset)?>
+        <?=$this->formRow($btnSubmit)?>
+        <?=$this->form()->closeTag($form)?> <!--close form-->
+    </div>
+</div>
