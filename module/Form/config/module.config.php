@@ -40,12 +40,27 @@ return [
                     ],
                 ],
             ],
+            'validator_chain' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route'    => '/validator-chain[/:action]',
+                    'defaults' => [
+                        'controller' => Controller\ValidatorChainController::class,
+                        'action'     => 'index',
+                    ],
+                    'constraints'=>[
+                        'action'=>'[a-zA-z0-9_-]*'
+                    ],
+                ],
+            ],
         ],
     ],
     'controllers' => [
         'factories' => [
             Controller\FormElementController::class => InvokableFactory::class,
             Controller\ValidatorController::class => InvokableFactory::class,
+            Controller\ValidatorChainController::class => InvokableFactory::class,
+
         ],
     ],
     'view_manager' => [
