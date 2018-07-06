@@ -1,0 +1,3 @@
+﻿- Màu trong logo ở dâu anh?
+- Previous/Next url không có( ở ngay duới cái lịch của trang search).
+- Google Chrome vẫn hiện nhu cũ mặc dù thay đổi css.

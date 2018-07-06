@@ -21,6 +21,7 @@ use Zend\Validator\File\ImageSize;
 use Zend\Validator\File\IsImage;
 use Zend\Validator\File\IsCompressed;
 use Zend\Validator\File\WordCount;
+use Zend\Validator\PasswordStrength;
 
 
 
@@ -405,6 +406,25 @@ class ValidatorController extends AbstractActionController{
 
         if ($validator->isValid($file)){
             echo 'file has enough word';
+        }
+        else 
+        {
+            $messages = $validator->getMessages();
+            foreach($messages as $message){
+                echo $message.'<br>';
+            }
+        }
+
+        return false;
+    }
+    //password check
+    public function passwordAction(){
+        $validator = new PasswordStrength();
+
+        $pass = "fsdfwe123@A";
+
+        if ($validator->isValid($pass)){
+            echo 'Correct password';
         }
         else 
         {

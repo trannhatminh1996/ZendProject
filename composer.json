@@ -21,13 +21,16 @@
         "zendframework/zend-mvc-i18n": "^1.1",
         "zendframework/zend-captcha": "^2.8",
         "zendframework/zend-session": "^2.8",
-        "zendframework/zend-validator": "^2.10"
+        "zendframework/zend-validator": "^2.10",
+        "zendframework/zend-file": "^2.8",
+        "zendframework/zend-db": "^2.9"
     },
     "autoload": {
         "psr-4": {
             "Application\\": "module/Application/src/",
             "Started\\": "module/Started/src/",
-            "Form\\": "module/Form/src/"
+            "Form\\": "module/Form/src/",
+            "Database\\": "module/Database/src/"
         }
     },
     "autoload-dev": {

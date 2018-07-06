@@ -53,6 +53,32 @@ return [
                     ],
                 ],
             ],
+            'input-filter' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route'    => '/login[/:action]',
+                    'defaults' => [
+                        'controller' => Controller\InputFilterController::class,
+                        'action'     => 'index',
+                    ],
+                    'constraints'=>[
+                        'action'=>'[a-zA-z0-9_-]*'
+                    ],
+                ],
+            ],
+            'file-upload' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route'    => '/upload-file[/:action]',
+                    'defaults' => [
+                        'controller' => Controller\UploadFileController::class,
+                        'action'     => 'index',
+                    ],
+                    'constraints'=>[
+                        'action'=>'[a-zA-z0-9_-]*'
+                    ],
+                ],
+            ],
         ],
     ],
     'controllers' => [
@@ -60,6 +86,8 @@ return [
             Controller\FormElementController::class => InvokableFactory::class,
             Controller\ValidatorController::class => InvokableFactory::class,
             Controller\ValidatorChainController::class => InvokableFactory::class,
+            Controller\InputFilterController::class => InvokableFactory::class,
+            Controller\UploadFileController::class => InvokableFactory::class,
 
         ],
     ],

@@ -38,5 +38,7 @@ if (file_exists(__DIR__ . '/../config/development.config.php')) {
 
 define('APPLICATION_PATH',dirname(__DIR__));
 
+define('FILE_PATH',APPLICATION_PATH.'/public/files/');
+
 // Run the application!
 Application::init($appConfig)->run();
